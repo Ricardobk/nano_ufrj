@@ -24,7 +24,7 @@ def on_publish(client,userdata,result):
 ######
 
 ##### 3 - Conexao com o servidor
-client.connect("146.164.26.62", 2494)
+client.connect("test.mosquitto.org", 1883)
 #####
 
 #### 4 - Inscrição em tópicos
@@ -50,12 +50,12 @@ while(1):
 2 - Um cliente no MQTT é definido pelo seu clientID, no caso bot e pelo seu perfil. O servidor de broker precisa definir um username e um password para que clientes possam acessá-los através de um perfil. Um perfil define o conjunto de permissões que clientes do grupo tem no sistema. Um cenário ilustrativo disso seria definir username e password diferentes para os administradores do servidor e conceder a eles permissão completa, enquanto clientes poderiam apenas ouvir mensagens, mas não criar tópicos, por exemplo.
 Portanto, para se conectar com qualquer servidor de broker é necessário um clientID e conhecimento do username e password do grupo no qual o requisitante se encaixa.
 
-3 - Chama a função que de fato estabelece a conexão com o servidor, utilizando a instância do cliente previamente definida. No exemplo, o ip em questão é o do broker do NANO e o segundo parâmetro a porta que está sendo utilizada para ouvir essa forma de MQTT.
+3 - Chama a função que de fato estabelece a conexão com o servidor, utilizando a instância do cliente previamente definida. No exemplo, o ip em questão é o do broker público da mosquitto e o segundo parâmetro a porta que está sendo utilizada para ouvir essa forma de MQTT.
 Um broker de MQTT pode ouvir as mensagens de algumas formas diferentes, como websockets, mqtt puro, encriptado ou não, entre outros. Cada uma dessas, quando disponíveis, recebem uma porta própria definida pelos desenvolvedores. Cabe a eles, portanto, divulgar as portas adequadas para os clientes.
 
 4 - Toda as ações no MQTT são feitas vinculadas a tópicos. Não é possível ouvir ou enviar mensagens de um tópico do qual o cliente não é assinante.
 
-5 - Funções de callback no linguajar técnico são funções que são passadas como parâmetro para outras funções. Aqui, é possível deixar isso de lado e entender que as callbacks do MQTT são os trechos de código que são ativados como resposta ao acontecimento de um certo evento do fluxo do MQTT. Alguns exemplos de possíveis eventos que cujo a callback function pode ser associada são quando a conexão com o broker é estabelecida, quando uma mensagem é enviada e processada pelo broker e quando uma mensagem é recebida pelo cliente.
+5 - Funções de callback no linguajar técnico são funções que são passadas como parâmetro para outras funções. Aqui, é possível deixar isso de lado e entender que as callbacks do MQTT são os trechos de código que são ativados como resposta ao acontecimento de um certo evento do fluxo do MQTT. Alguns exemplos de possíveis eventos cujo a callback function pode ser associada são quando a conexão com o broker é estabelecida, quando uma mensagem é enviada e processada pelo broker e quando uma mensagem é recebida pelo cliente.
 Essa funcionalidade é opcional, visto que não é necessário definir resposta para todos os eventos, entretanto, no MQTT, a interação com esses eventos só pode ser feita através de callbacks e cabe ao cliente implementar o código que melhor lhe atende em cada evento.
 
 Como dito anteriormente, MQTT é um protocolo. Portanto, não importa a linguagem ou ferramenta sendo utilizada, suas regras deverão ser respeitadas. Tendo conhecimento das regras, o uso em qualquer outro ambiente é apenas uma questão de adequação à sintaxe da ferramenta. O seguinte código para Processing de conexão ao broker do shiftr.io deixa claro esse ponto. Nele, marcamos as sessões referenciadas pelos índices anteriores.
