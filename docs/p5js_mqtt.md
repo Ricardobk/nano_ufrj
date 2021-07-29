@@ -64,7 +64,7 @@ class Topic
         build()
         {
 
-             fill(color(this.color[0], this.color[1], this.color[2])); // Em p5js, primeiro definimos as propriedade e depois chamamos a função de criação do objeto em questão. Aqui estamos passando um array no espectro                                                                             RGB, que define a cor atual dessa instância.
+             fill(color(this.color[0], this.color[1], this.color[2])); // Em p5js, primeiro definimos as propriedade e depois chamamos a função de criação do objeto em questão. Aqui estamos passando um array no espectro                                                                          // RGB, que define a cor atual dessa instância.
              circle(this.x, this.y, this.d);                           // Função do p5js para criação de um círculo. Não esqueça de ler a doc com as referências quando for fazer seus próprios códigos.
 
              fill('black'); // daqui em diante não queremos mais a cor usada anteriormente, mas sim preto.
@@ -102,7 +102,7 @@ function setup()
                   })
   //
   createCanvas(windowWidth, windowHeight); // Cria a tela onde os objetos são desenhados. Objetos só podem ser renderizados se estiverem dentro da área do canvas.
-                                           // windowWidth e windowHeight são duas variáveis do sistema utilizados para pegar o tamanho da tela onde o código está rodando. Ex: Se adapta ao tamanho da tela de um celular ou d                                              e um notebook.
+                                           // windowWidth e windowHeight são duas variáveis do sistema utilizados para pegar o tamanho da tela onde o código está rodando. Ex: Se adapta ao tamanho da tela de um celular ou d                                           //   e um notebook.
   initialize_topics();
 }
 //
