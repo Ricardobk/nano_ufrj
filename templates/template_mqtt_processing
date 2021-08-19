@@ -1,0 +1,29 @@
+import mqtt.*;
+
+MQTTClient client;
+
+void setup() {
+  client = new MQTTClient(this);
+  client.connect("mqtt://participants:prp1nterac@146.164.26.62", "nano");
+}
+
+void draw() {}
+
+void keyPressed() {
+  client.publish("/hello", "world");
+}
+
+void clientConnected() {
+  println("client connected");
+
+  client.subscribe("/hello");
+}
+
+void messageReceived(String topic, byte[] payload) {
+  println("new message: " + topic + " - " + new String(payload));
+}
+
+void connectionLost() {
+  println("connection lost");
+}
+
