@@ -17,7 +17,7 @@ void connect() {
   }
 
   Serial.print("\nconnecting...");
-  while (!client.connect("arduinonano", "participants", "prp1nterac")) {
+  while (!client.connect("UseUmIdDiferenteAqui", "participants", "prp1nterac")) {
     Serial.print(".");
     delay(1000);
   }

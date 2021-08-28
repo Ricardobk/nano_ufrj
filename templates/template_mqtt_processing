@@ -4,7 +4,7 @@ MQTTClient client;
 
 void setup() {
   client = new MQTTClient(this);
-  client.connect("mqtt://participants:prp1nterac@146.164.26.62", "nano");
+  client.connect("mqtt://participants:prp1nterac@146.164.26.62", "UseUmIdDiferenteAqui");
 }
 
 void draw() {}

@@ -1,7 +1,7 @@
 import paho.mqtt.client as paho
 import time
 
-client = paho.Client("bot")
+client = paho.Client("UseUmIdDiferenteAqui")
 client.username_pw_set(username="participants", password="prp1nterac")
 
 def on_message(client, userdata, message):

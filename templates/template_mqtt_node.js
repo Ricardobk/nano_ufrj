@@ -3,7 +3,7 @@ const mqtt = require('mqtt');
 
 // declare client
 const client = mqtt.connect('participants:prp1nterac@146.164.26.62:2494', {
-  clientId: 'nanode'
+  clientId: 'UseUmIdDiferenteAqui'
 });
 
 // register "connect" callback
